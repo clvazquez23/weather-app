@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+        <script src="https://kit.fontawesome.com/ebb0f226b2.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+          <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <div class="container">
+
+    <form class="searchbar">
+<input type="Search Locations" placeholder="Search Locations" autocomplete="off" id="city-search" autofocus="on" />
+      <input type="button" value="🔎" />
+      <button type="button" class="pinButton">
+        📌
+      </button>
+    </form>
+
+    <i class="fas fa-cloud-sun-rain"></i>
+      <p class="temperature" id="temp">
+        18°C 
+      </p>
+    <h5 class="location" id="card-city">Austin</h5>
+
+      <p class="date-time"></p>
+    
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">
+        10mph <br />
+        <i class="fas fa-wind"></i>
+      </li>
+      <li class="list-group-item">15% <br /><i class="fas fa-smog"></i></li>
+      <li class="list-group-item">
+        60% <br />
+        <i class="fas fa-tint"></i>
+      </li>
+    </ul>
+
+    <div class="row weather-forecast" id="forecast">
+      <div class="col">
+        <h3>
+          Mon
+        </h3>
+        <i class="far fa-sun"></i>
+        <div class="weather-forecast-temperature">
+          <strong>77°</strong>
+        </div>
+      </div>
+      <div class="col">
+        <h3>
+          Tues
+        </h3>
+      <i class="fas fa-cloud-sun"></i>
+        <div class="weather-forecast-temperature">
+          <strong>79°</strong>
+        </div>
+      </div>
+      <div class="col">
+        <h3>
+          Wed
+        </h3>
+        <i class="far fa-sun"></i>
+        <div class="weather-forecast-temperature">
+          <strong>80°</strong>
+        </div>
+      </div>
+      <div class="col-2">
+        <h3>
+          Thurs
+        </h3>
+        <i class="far fa-sun"></i>
+        <div class="weather-forecast-temperature">
+          <strong>88°</strong>
+        </div>
+      </div>
+      <div class="col">
+        <h3>
+          Fri
+        </h3>
+        <i class="fas fa-cloud-rain"></i>
+        <div class="weather-forecast-temperature">
+          <strong>94°</strong>
+        </br>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    <footer class="sign">Coded by <span class="tag">Connie Vázquez 📸</span></footer>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
