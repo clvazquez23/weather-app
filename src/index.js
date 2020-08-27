@@ -31,6 +31,7 @@ function search(event) {
   let cityChange = document.querySelector("#card-city");
   if (searchbar.value) {
     cityChange.innerHTML = `${searchbar.value}`;
+    searchCity(searchbar.value);
   } else {
     cityChange.innerHTML = null;
     alert("Please enter your city");
