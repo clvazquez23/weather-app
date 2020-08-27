@@ -25,32 +25,15 @@ if (minutes < 10) {
 
 dateTime.innerHTML = `${day}, ${hours}:${minutes}`;
 
-function search(event) {
-  event.preventDefault();
-  let searchbar = document.querySelector("#city-search");
-  let cityChange = document.querySelector("#card-city");
-  if (searchbar.value) {
-    cityChange.innerHTML = `${searchbar.value}`;
-  } else {
-    cityChange.innerHTML = null;
-    alert("Please enter your city");
-  }
-}
-
 let form = document.querySelector(".searchbar");
 form.addEventListener("submit", search);
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temp");
-  temperatureElement.innerHTML = 80;
-}
+function displayWeatherCondition(response) {
+  document.querySelector("#location").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
 
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temp");
-  temperatureElement.innerHTML = 18;
-}
 
 function searchCity(city) {
   let apiKey = "2b9d73225ef9671dd10e582640edb6d6";
