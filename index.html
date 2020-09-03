@@ -1,97 +1,66 @@
 <!DOCTYPE html>
-<html>
-  <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-        <script src="https://kit.fontawesome.com/ebb0f226b2.js" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Weather App</title>
-    <meta charset="UTF-8" />
-          <link rel="stylesheet" href="src/style.css">
-  </head>
-  <body>
-    <div class="container">
+<html lang="en">
 
-    <form class="searchbar">
-<input type="Search Locations" placeholder="Search Locations" autocomplete="off" id="city-search" autofocus="on" />
-      <input type="button" value="🔎" />
-      <button type="button" class="pinButton">
-        📌
-      </button>
-    </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <i class="fas fa-cloud-sun-rain"></i>
-      <p class="temperature" id="temp">
-        18°C 
-      </p>
-    <h5 class="location" id="card-city">Austin</h5>
+  <link rel="stylesheet" href="src/style.css" />
+  <title>Weather App</title>
+</head>
 
-      <p class="date-time"></p>
-    
-    <ul class="list-group list-group-horizontal">
-      <li class="list-group-item">
-        10mph <br />
-        <i class="fas fa-wind"></i>
-      </li>
-      <li class="list-group-item">15% <br /><i class="fas fa-smog"></i></li>
-      <li class="list-group-item">
-        60% <br />
-        <i class="fas fa-tint"></i>
-      </li>
-    </ul>
-
-    <div class="row weather-forecast" id="forecast">
-      <div class="col">
-        <h3>
-          Mon
-        </h3>
-        <i class="far fa-sun"></i>
-        <div class="weather-forecast-temperature">
-          <strong>77°</strong>
+<body>
+  <div class="container">
+    <div class="weather-app-wrapper">
+      <div class="weather-app">
+        <form id="search-form" class="mb-3">
+          <div class="row">
+            <div class="col-9">
+              <input type="search" placeholder="Search Locations" class="form-control" id="city-input"
+                autocomplete="off" />
+            </div>
+            <div class="col-3">
+              <input type="submit" value="📍" class="btn btn-primary w-100" />
+            </div>
+          </div>
+        </form>
+        <div class="overview">
+          <h1 id="city"></h1>
+          <ul>
+            <li><span id="date"></span></li>
+            <li id="description"></li>
+          </ul>
         </div>
-      </div>
-      <div class="col">
-        <h3>
-          Tues
-        </h3>
-      <i class="fas fa-cloud-sun"></i>
-        <div class="weather-forecast-temperature">
-          <strong>79°</strong>
+        <div class="row">
+          <div class="clearfix weather-temperature">
+            <img src="" alt="Clear" id="icon" class="float-left" />
+            <div class="float-left">
+              <strong id="temperature"></strong><span class="units"><a href="#" id="celsius-link" class="active">°C</a>
+                |
+                <a href="#" id="fahrenheit-link">°F</a></span>
+            </div>
+          </div>
         </div>
+        <ul class="hum-wind">
+          <li>Humidity: <span id="humidity"></span>%</li>
+          <li>Wind: <span id="wind"></span> km/h</li>
+        </ul>
       </div>
-      <div class="col">
-        <h3>
-          Wed
-        </h3>
-        <i class="far fa-sun"></i>
-        <div class="weather-forecast-temperature">
-          <strong>80°</strong>
-        </div>
-      </div>
-      <div class="col-2">
-        <h3>
-          Thurs
-        </h3>
-        <i class="far fa-sun"></i>
-        <div class="weather-forecast-temperature">
-          <strong>88°</strong>
-        </div>
-      </div>
-      <div class="col">
-        <h3>
-          Fri
-        </h3>
-        <i class="fas fa-cloud-rain"></i>
-        <div class="weather-forecast-temperature">
-          <strong>94°</strong>
-        </br>
-        </div>
-      </div>
-      </div>
+      <div class="row weather-forecast" id="forecast"></div>
     </div>
-    </div>
-    <footer><a href="https://github.com/clvazquez23/weather-app">Open-sourced code</a> by Connie Vázquez 📸</footer>
+  </div>
+  </div>
+  <footer>
+    <small>
+      <a href="https://github.com/clvazquez23/weather-app" target="_blank">Open-source code</a>
+      by Connie Vazquez
+    </small>
+  </footer>
+  <script src="src/app.js"></script>
+</body>
 
-    <script src="src/index.js"></script>
-  </body>
 </html>
